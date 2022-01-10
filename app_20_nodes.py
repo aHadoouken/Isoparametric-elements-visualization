@@ -121,20 +121,16 @@ fig = make_subplots(
 
 fig.add_trace(
     go.Scatter3d(x=[0.0], y=[0.0], z=[0.0],
-        mode='markers', 
-        marker=dict(
-            size=5
-        ),
+        mode='lines',
+        line=dict(color='darkred',width=11),
     ),
     row=1, col=1)
 
 x0, y0, z0 = form(0, 0, 0)
 fig.add_trace(
     go.Scatter3d(x=[x0], y=[y0], z=[z0],
-        mode='markers', 
-        marker=dict(
-            size=5
-        ),
+        mode='lines',
+        line=dict(color='darkred',width=11),
     ),
     row=1, col=2)
 
@@ -267,4 +263,4 @@ def reset_sliders(btn1):
     return 0, 0, 0
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=DEBUG, port=PORT)

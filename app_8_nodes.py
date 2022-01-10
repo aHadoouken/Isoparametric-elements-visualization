@@ -35,10 +35,8 @@ fig = make_subplots(
 
 fig.add_trace(
     go.Scatter3d(x=[0.0], y=[0.0], z=[0.0],
-        mode='markers', 
-        marker=dict(
-            size=5
-        ),
+        mode='lines',
+        line=dict(color='darkred',width=11),
     ),
     row=1, col=1)
 
@@ -51,10 +49,8 @@ y0 = np.sum(y_v*N)
 z0 = np.sum(z_v*N)
 fig.add_trace(
     go.Scatter3d(x=[x0], y=[y0], z=[z0],
-        mode='markers', 
-        marker=dict(
-            size=5
-        ),
+        mode='lines',
+        line=dict(color='darkred',width=11),
     ),
     row=1, col=2)
 
@@ -74,9 +70,7 @@ for i in range(4):
     fig.add_trace(go.Scatter3d(x=[ksi[ind1], ksi[ind1 + 4]], y=[eta[ind1], eta[ind1 + 4]], z=[zeta[ind1], zeta[ind1 + 4]], **params), 1, 1)
 
 fig.update_layout(
-    #width=1000,
     height=700,
-    #paper_bgcolor="LightSteelBlue",
     margin=dict(
         l=0,
         r=0,
